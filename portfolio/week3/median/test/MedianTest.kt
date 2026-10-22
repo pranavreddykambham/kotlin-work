@@ -17,4 +17,21 @@ class MedianTest : FreeSpec({
     }
 
     // Write four more tests here
+    
+    "Median of an odd-sized list" {
+        median(listOf(1.0f, 3.0f, 2.0f)) shouldBe (2.0f plusOrMinus tolerance)
+    }
+
+    "Median of an even-sized list" {
+        median(listOf(1.0f, 4.0f, 2.0f, 3.0f)) shouldBe (2.5f plusOrMinus tolerance)
+    }
+
+    "Median of an unsorted list" {
+        median(listOf(9.0f, 1.0f, 5.0f)) shouldBe (5.0f plusOrMinus tolerance)
+    }
+
+    "Median of a list with negative numbers" {
+        median(listOf(-5.0f, -1.0f, -3.0f)) shouldBe (-3.0f plusOrMinus tolerance)
+    }
+
 })
